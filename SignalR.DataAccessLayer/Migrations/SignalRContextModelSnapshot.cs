@@ -231,9 +231,6 @@ namespace SignalR.DataAccessLayer.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderDetailID1")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderID")
                         .HasColumnType("int");
 
@@ -247,8 +244,6 @@ namespace SignalR.DataAccessLayer.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderDetailID");
-
-                    b.HasIndex("OrderDetailID1");
 
                     b.HasIndex("OrderID");
 
@@ -352,10 +347,6 @@ namespace SignalR.DataAccessLayer.Migrations
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.OrderDetail", b =>
                 {
-                    b.HasOne("SignalR.EntityLayer.Entities.OrderDetail", null)
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderDetailID1");
-
                     b.HasOne("SignalR.EntityLayer.Entities.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderID")
@@ -387,11 +378,6 @@ namespace SignalR.DataAccessLayer.Migrations
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("SignalR.EntityLayer.Entities.OrderDetail", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("SignalR.EntityLayer.Entities.Product", b =>
