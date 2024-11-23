@@ -32,5 +32,10 @@ namespace SignalRApi.Controllers
         {
             return Ok(_orderService.TLastOrderPriece());
         }
+        [HttpGet("TodayTotalPrice")]
+        public IActionResult TodayTotalPrice() 
+        {
+            return Ok(_orderService.TTodayTotalPrice());
+        }
     }
 }
