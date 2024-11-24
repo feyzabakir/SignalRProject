@@ -38,7 +38,7 @@ namespace SignalR.BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public decimal TLastOrderPriece()
+        public decimal TLastOrderPrice()
         {
             return _orderDal.LastOrderPriece();
         }

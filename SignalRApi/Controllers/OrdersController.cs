@@ -30,7 +30,7 @@ namespace SignalRApi.Controllers
         [HttpGet("LastOrderPrice")]
         public IActionResult LastOrderPrice()
         {
-            return Ok(_orderService.TLastOrderPriece());
+            return Ok(_orderService.TLastOrderPrice());
         }
         [HttpGet("TodayTotalPrice")]
         public IActionResult TodayTotalPrice() 
